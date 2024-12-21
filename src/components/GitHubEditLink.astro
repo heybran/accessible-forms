@@ -1,0 +1,8 @@
+---
+let { path } = Astro.props;
+path = path.startsWith("/") ? path.slice(1) : path;
+---
+
+<a href={"https://github.com/heybran/accessible-forms/" + path} target="_blank">
+	Edit this page on GitHub
+</a>

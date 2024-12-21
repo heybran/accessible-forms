@@ -1,0 +1,20 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import GitHubEditLink from "../components/GitHubEditLink.astro";
+
+const title = "HTML Accessible Forms Test Cases";
+const description = "A series of HTML test cases to determine how they are announced in different screen reader / browser combinations.";
+---
+
+<AppLayout title={title} description={description}>
+<article>
+  <h1>HTML Accessible Forms Test Cases</h1>
+  <p>A series of HTML test cases to determine how they are announced in different screen reader / browser combinations.</p>
+  <GitHubEditLink path="src/pages/index.astro" />
+
+  <section id="basic">
+	<h2>Basic form control and label tests</h2>
+	<p>Tests to determine how form controls and their associated <code></code> and <legend> elements are announced. In some cases, the form element does not require or should not have a <label>.</p>
+  </section>
+</article>
+</AppLayout>
