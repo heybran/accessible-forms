@@ -6,7 +6,7 @@ interface Props extends HTMLAttributes<"a"> {
 }
 
 const { text, href, ...props } = Astro.props;
-const isActive = href?.replace(/$\//, '') === Astro.url.pathname.replace(/$\//, '');
+const isActive = href === Astro.url.pathname;
 
 ---
 
