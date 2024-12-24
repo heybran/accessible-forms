@@ -36,6 +36,12 @@ body {
 	height: 100dvh;
 }
 
+@media screen and (min-width: 768px) {
+	body {
+		overflow: hidden;
+	}
+}
+
 html[data-theme="light"] code:is(a > code) {
 	color: var(--accent-color);
 	font-weight: 600;
@@ -193,6 +199,10 @@ a:focus-visible {
 	color: black;
 }
 
+.site-header li a.active {
+	text-decoration-thickness: 3px;
+}
+
 form {
     padding: 1em;
     background: var(--form-background-color);
@@ -206,7 +216,7 @@ legend {
 	margin: 0;
 }
 
-input:not([type="radio"]) {
+input:not([type="radio"]):not([type="checkbox"]) {
 	display: block;
     background: #fff;
     color: #000;
@@ -306,7 +316,7 @@ input:focus {
 .error-message::before {
 	position: relative;
     left: 0;
-    top: 4px;
+    top: 3px;
     display: inline-block;
     margin: 0 .2em 0 0;
 	content: url(/icons/circle-x.svg);
@@ -320,6 +330,10 @@ input:focus {
 .green, [green] {
 	color: green;
 	font-weight: bold;
+}
+
+.yellow, [yellow] {
+	background-color: yellow;
 }
 
 h3 {

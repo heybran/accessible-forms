@@ -1,9 +1,10 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: "Radio group with error - aria-describedby applied to <legend>"
+original: "https://russmaxdesign.github.io/accessible-forms/fieldset-error03.html"
 description: |
   This is a test case designed to determine how an error message associated with a radio group will be announced by various screen readers.
-tags: ["javascript"]
+tags: ["fieldset"]
 ---
 
 This is a test case designed to determine how an error message associated with a radio group will be announced by various screen readers.
@@ -29,19 +30,19 @@ This is a test case designed to determine how an error message associated with a
 
 ```html
 <form action="#">
-    <fieldset>
-      <legend aria-describedby="e01">Do you like boats?</legend>
-      <div class="form-group">
-        <input type="radio" id="boats-y" name="boats">
-        <label for="boats-y">Yes</label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="boats-n" name="boats">
-        <label for="boats-n">No</label>
-      </div>
-      <p class="error-message" id="e01">Error: Choose at least one option</p>
-    </fieldset>
-  </form>
+  <fieldset>
+    <legend aria-describedby="e01">Do you like boats?</legend>
+    <div class="form-group">
+      <input type="radio" id="boats-y" name="boats">
+      <label for="boats-y">Yes</label>
+    </div>
+    <div class="form-group">
+      <input type="radio" id="boats-n" name="boats">
+      <label for="boats-n">No</label>
+    </div>
+    <p class="error-message" id="e01">Error: Choose at least one option</p>
+  </fieldset>
+</form>
 ```
 
 ## Assistive technologies

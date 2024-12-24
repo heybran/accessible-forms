@@ -2,13 +2,19 @@
 import AppLayout from './AppLayout.astro';
 import GitHubEditLink from '../components/GitHubEditLink.astro';
 
-let { title, description, url, tags } = Astro.props.content;
+let { title, description, url, original } = Astro.props.content;
 url = url.startsWith('/') ? url.slice(1) : url;
 ---
 
 <AppLayout title={title} description={description}>
 	<h1>{title}</h1>
-	<GitHubEditLink path={"src/pages/" + url + ".md"} />
+	<div class="display-flex flex-wrap-wrap align-items-center gap-2">
+		<GitHubEditLink path={"src/pages/" + url + ".md"} />
+		{original && (
+			<span aria-hidden="true">/</span>
+			<a href={original} target="_blank">View original report by Russ Weakley <span aria-hidden="true">↗</span></a>
+		)}
+	</div>
 	<div class="margin-block-start-9" aria-hidden="true"></div>
 	<slot />
 </AppLayout>
