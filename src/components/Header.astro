@@ -1,0 +1,104 @@
+---
+import Link from "./Link.astro";
+---
+<a href="#maincontent" class="skip-to-content">Skip to main content</a>
+<header class="site-header padding-inline-6 padding-inline-4--mobile padding-block-start-6 padding-block-end-4">
+  <nav>
+    <div class="display-flex gap-1 gap-2--mobile justify-content-stretch align-items-center--mobile flex-direction-column flex-direction-row--mobile flex-wrap-wrap--mobile margin-block-end-0">
+	  <details open>
+		<summary>
+			<code>&lt;fieldset&gt;</code> tests
+		</summary>
+		<ul>
+			<li><Link href="/fieldset/" text="Basic <fieldset> and <legend>" /></li>
+			<li><Link href="/fieldset-buttons/" text="<fieldset> with buttons" /></li>
+		</ul>
+	  </details>
+	  <details open>
+		<summary>
+			<code>&lt;fieldset&gt;</code> with errors tests
+		</summary>
+		<ul>
+			<li><Link href="/fieldset-error-01/" text="Radio group with error - no programmatic association" /></li>
+			<li><Link href="/fieldset-error-02/" text="Radio group with error - aria-describedby applied to <fieldset>" /></li>
+			<li><Link href="/fieldset-error-03/" text="Radio group with error - aria-describedby applied to <legend>" /></li>
+			<li><Link href="/fieldset-error-04/" text="Radio group with error - aria-describedby applied to <input>" /></li>
+			<li><Link href="/fieldset-error-05/" text="Radio group with error - aria-label applied to <fieldset>" /></li>
+			<li><Link href="/fieldset-error-06/" text="Radio group with error - aria-label applied to <input>" /></li>
+		</ul>
+	  </details> 
+	  <details open>
+		<summary>
+			Nested <code>&lt;fieldset&gt;</code> tests
+		</summary>
+		<ul>
+			<li><Link href="/nested-fieldset/" text="Nested <fieldset>" /></li>
+			<li><Link href="/nested-fieldset-presentation/" text='Nested <fieldset>, with role="presentation"' /></li>
+			<li><Link href="/nested-fieldset-without-list/" text='Nested <fieldset> without list' /></li>
+		</ul>
+	  </details>
+    </div>
+  </nav>
+</header>
+
+<style>
+	.site-header {
+	background-color: var(--background-color-light);
+}
+.site-header__name {
+  font-size: 2rem;
+  line-height: 1;
+  margin-block: 0;
+  font-weight: bold;
+  margin-inline-start: -2px;
+}
+
+.site-header__meta {
+  font-size: 0.8rem;
+}
+
+.site-header__divider {
+  margin-block: 1rem;
+  border-color: #d7d0d02e;
+}
+
+.site-header ul {
+  list-style: " ";
+  padding: 0;
+}
+
+.site-header li a {
+  display: block;
+  padding-block: 4px;
+  color: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+  text-underline-offset: 3px;
+}
+
+.site-header svg {
+  height: 24px;
+  width: auto;
+}
+
+.site-header__social a {
+  padding-block: 0;
+}
+
+details > ul {
+	margin-block-start: 4px;
+}
+
+details {
+	margin-block-start: 8px;
+}
+@media screen and (min-width: 768px) {
+	body > header {
+		overflow-y: scroll;
+	}
+}
+</style>

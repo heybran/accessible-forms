@@ -1,0 +1,88 @@
+<details class="hamburger-menu-wrap border-zinc-400">
+  <summary class="hamburger-menu">
+    <span class="hamburger-menu__line"></span>
+    <span class="hamburger-menu__line"></span>
+    <span class="hamburger-menu__line"></span>
+  </summary>
+</details>
+<script>
+  document.querySelector('body > details').addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+</script>
+<style>
+.hamburger-menu-wrap {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: auto;
+  width: 3.5em;
+  height: 3.5em;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@media (any-pointer: coarse) {
+  .hamburger-menu-wrap {
+    display: flex;
+  }
+}
+
+.hamburger-menu {
+  list-style: none; /* summary元素默认会有一个三角形箭头，可以使用这个行代码删除箭头 */
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hamburger-menu::-webkit-details-marker {
+  display: none;
+}
+
+.hamburger-menu__line {
+  display: block;
+  --width: 50%;
+  width: var(--width);
+  --height: .2rem;
+  height: var(--height);
+  background-color: white;
+  transition: .5s;
+  position: absolute;
+  left: calc((100% - var(--width)) / 2);
+  --middle-position: calc(50% - var(--height) / 2);
+  --gap: 8px;
+}
+
+.hamburger-menu__line:first-child {
+  top: calc(var(--middle-position) - var(--gap));
+}
+
+.hamburger-menu__line:nth-child(2) {
+  top: var(--middle-position);
+}
+
+.hamburger-menu__line:last-child {
+  top: calc(var(--middle-position) + var(--gap));
+}
+
+.hamburger-menu-wrap[open] .hamburger-menu__line:nth-child(2) {
+  display: none;
+}
+
+.hamburger-menu-wrap[open] .hamburger-menu__line:first-child {
+  top: var(--middle-position);
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.hamburger-menu-wrap[open] .hamburger-menu__line:last-child {
+  top: var(--middle-position);
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+</style>
